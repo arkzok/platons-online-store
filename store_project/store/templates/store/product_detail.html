@@ -1,0 +1,56 @@
+{% extends 'store/index.html' %}
+
+{% block title %}
+    {{ product.title }} - Platon's store
+{% endblock title %}
+
+{% block content %}
+    <div class="card-group">
+        <div class="card">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="Product image">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.info }}</p>
+                <p class="card-text">Price: ${{ product.price }}</p>
+                <ul class="list-group list-group-horizontal">
+                    {% for category in product.categories.all %}
+                        <li class="list-group-item">
+                            <a href="{{ category.get_absolute_url }}">
+                                {{ category.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Buy now!
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Contact us
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="m-3 d-flex flex-column justify-content-between" action="/save_order" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="user_name" class="form-label">Your name:</label>
+                        <input type="text" class="form-control" id="user_name" name="user_name" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user_email" class="form-label">Your Email address:</label>
+                        <input type="email" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp" required>
+                    </div>
+                    <input name="product_id" value="{{ product.id }}" hidden>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %} 

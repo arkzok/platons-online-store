@@ -1,0 +1,11 @@
+{% extends 'store/index.html' %}
+
+{% block title %}
+    Order approved - Platon's store
+{% endblock title %}
+
+{% block content %}
+    <h1 class="text-center">
+        Hello, {{ order.name }}! Your order {{ order.product.title }} with the price of ${{ order.product.price }} was approved!
+    </h1>
+{% endblock content %}

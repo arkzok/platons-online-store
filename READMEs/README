@@ -1,0 +1,12 @@
+# Activating virtual environment
+venv/scripts/activate
+
+# Switching to the project folder
+cd store_project
+
+# When changing the database structure
+python manage.py makemigrations
+python manage.py migrate
+
+# Starting the server
+python manage.py runserver
