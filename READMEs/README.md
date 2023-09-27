@@ -31,3 +31,9 @@ python manage.py migrate
 
 # Superuser (admin) registration
 python manage.py createsuperuser
+
+# Listing installed modules
+pip freeze
+
+# Creating dependencies file
+pip freeze > reqs.txt
