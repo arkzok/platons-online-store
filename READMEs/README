@@ -1,5 +1,8 @@
-# Activating virtual environment
+# Activating virtual environment in  Powershell
 venv/scripts/activate
+
+# Activating virtual environment on Pythonanywhere
+source .virtualenvs/arkzok.pythonanywhere.com/bin/activate
 
 # Switching to the project folder
 cd store_project
