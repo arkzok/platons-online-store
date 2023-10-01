@@ -1,8 +1,11 @@
 # Creating virtual environment
 -m venv venv
 
-# Activating virtual environment
+# Activating virtual environment in Powershell
 venv/scripts/activate
+
+# Activating virtual environment on Pythonanywhere
+source .virtualenvs/user_name.pythonanywhere.com/bin/activate
 
 # Updating package installer (PIP)
 python -m pip install --upgrade pip
