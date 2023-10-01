@@ -10,7 +10,7 @@ source .virtualenvs/user_name.pythonanywhere.com/bin/activate
 # Updating package installer (PIP)
 python -m pip install --upgrade pip
 
-# Installing a framework (in this case Django)
+# Installing Django
 pip install django
 
 # Creating a project
