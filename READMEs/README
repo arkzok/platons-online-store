@@ -7,6 +7,9 @@ source .virtualenvs/arkzok.pythonanywhere.com/bin/activate
 # Switching to the project folder
 cd store_project
 
+# Switching to main folder on Pythonanywhere
+cd arkzok.pythonanywhere.com
+
 # When changing the database structure
 python manage.py makemigrations
 python manage.py migrate
